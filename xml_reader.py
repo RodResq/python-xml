@@ -14,3 +14,9 @@ root = tree.getroot()
 # Iterando sobre um elemento especifico
 for neighbor in root.iter('neighbor'):
     print(f"Atributos da uma tag especifica:  Cidade: {neighbor.attrib.get('name')} - Direcao: {neighbor.attrib.get('direction')}")
+
+# Encontrando um tag especifica e extraindo o valor de seus nos filhos
+for country in root.findall('country'):
+    rank = country.find('rank').text
+    name = country.get('name')
+    print(f"NomeCidade: {name} - Classificacao: {rank}")
