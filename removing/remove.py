@@ -1,10 +1,13 @@
 import xml.etree.ElementTree as ET
+import re
 
 path_xml = '/home/rresq/github/python-xml/country_data.xml'
+regex = re.compile(r'country')
 
 try:
     tree = ET.parse(path_xml)
     root = tree.getroot()
+    print(regex.search(root))
 except FileNotFoundError:
     print('Arquivo nao encontrado')
 else:
